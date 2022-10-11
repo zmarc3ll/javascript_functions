@@ -1,26 +1,34 @@
 
 function oszthatoOttel(value) {
-    return value % 5 == 0;
+    return value % 5 === 0;
   }
 
   class Szazlabu {
-    labakSzama;
+    #labakSzama;
     
     constructor(labakSzama){
-        this.labakSzama = labakSzama; 
+        this.#labakSzama = labakSzama; 
+    }
+    toString () {
+        return this.#labakSzama+' lábú százlábú';
     }
   }
+  console.log(new Szazlabu(0).toString());
 
-  Szazlabu.prototype.toString = function szazlabuToString() {
-    let ans = this.labakSzama+' lábú százlábú';
-    return ans;
-}
+  function labakbolSzazlabuk(labakTomb) {
+    return labakTomb.map(szam => new Szazlabu(szam)); 
+  }
 
-function myfunction(){
-    let obj=new Szazlabu(0);
-    console.log(Szazlabu.toString());
-}
+  console.log(labakbolSzazlabuk([1,45,989]));
 
+  function szazlabumegjelenit(id, szazlabuk) {
+    let elem =document.getElementById(id);
+    szazlabuk.array.forEach(element => {
+        let li = document.createElement('li');
+        li.textContent=element.toString();
+        
+    });
+  }
 document.addEventListener('DOMContentLoaded',() => {
     console.log('page loaded');
     let t=[];
@@ -35,5 +43,4 @@ document.addEventListener('DOMContentLoaded',() => {
     document.getElementById('hozzaad').addEventListener('click',() => {
         t.push(document.getElementById('numberInput').value);
     });
-    myfunction();
 });
