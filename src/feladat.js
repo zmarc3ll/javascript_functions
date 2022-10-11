@@ -10,10 +10,16 @@ function oszthatoOttel(value) {
         this.labakSzama = labakSzama; 
     }
   }
-  function toString() {
 
-  }
+  Szazlabu.prototype.toString = function szazlabuToString() {
+    let ans = this.labakSzama+' lábú százlábú';
+    return ans;
+}
 
+function myfunction(){
+    let obj=new Szazlabu(0);
+    console.log(Szazlabu.toString());
+}
 
 document.addEventListener('DOMContentLoaded',() => {
     console.log('page loaded');
@@ -29,6 +35,5 @@ document.addEventListener('DOMContentLoaded',() => {
     document.getElementById('hozzaad').addEventListener('click',() => {
         t.push(document.getElementById('numberInput').value);
     });
-    Szazlabu.prototype.toString = this.labakSzama+' lábű százlábú';
-    console.log(Szazlabu);
+    myfunction();
 });
