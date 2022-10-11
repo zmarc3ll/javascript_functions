@@ -1,13 +1,9 @@
 
 
-    function fvNeve() {
-        
-    }
-
+    function fvNeve() {}
     let masikFv = function(param1, param2) {
         console.log(param1);
     };
-
 /*     document.addEventListener('DOMContentLoaded',function () {
         console.log('page loaded');
 
@@ -15,8 +11,8 @@
             document.body.style.backgroundColor='lightblue';
         })
     });
- */
-/* function osszehasonlit(a,b) {
+ 
+ function osszehasonlit(a,b) {
     if (a < b) {
         return -1;
     } else if  (a > b){
@@ -44,6 +40,52 @@
         console.log(index,e);
     });
     console.log(t);
+    let szam=56;
+    class Kutya {
+        nev= 'Bodri';
+        kor= 10;
+        constructor(){
+            Math.random();
+        }
+    }
+
+    //! mellékhatás - side effect !
+    //nincs mellékhatás: 
+    1+1;
+    Math.sqrt(1*2/4);
+    [1,2,3].filter(e => e > 2);
+    szam > 2;
+    [56, 33].includes(szam);
+    new Kutya();
+    new Date();
+
+    //van mellékhatása: 
+    console.log('hello');
+    let a = szam++;
+    let b = ++szam;
+    console.log(a, b);
+    t.push(45);
+    t.sort();
+    Math.random();
+
+    //tiszta függvény - pure functions
+    function kettonelnagyobb(t) {
+        return t.filter(e => e > 2);
+    }
+
+    //nem tiszta - a document nem paraméter v. lokális változó
+    function tombKiir(t) {
+        t.forEach(e => console.log(e));
+    }
+
+    function getButtonColor(){
+        document.getElementById('gomb').style.backgroundColor;
+    }
+
+    //nem tiszta
+    function getDateAsString() {
+        return (new Date()).toISOString();
+    }
 
     document.addEventListener('DOMContentLoaded', () => {
         console.log('page loaded');
