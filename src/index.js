@@ -1,5 +1,3 @@
-
-
     function fvNeve() {}
     let masikFv = function(param1, param2) {
         console.log(param1);
